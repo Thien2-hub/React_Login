@@ -1,0 +1,149 @@
+.signup-container {
+  display: flex;
+  background: #1c1b29;
+  color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.signup-left {
+  flex: 1;
+  position: relative;
+  background: #000;
+}
+
+.btn-back {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.slideshow-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slideshow-track {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  font-size: 18px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 12px;
+  height: 3px;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #fff;
+}
+
+.signup-right {
+  flex: 1;
+  padding: 40px;
+  background: #2c2b3f;
+}
+
+.signup-right h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.name-row {
+  display: flex;
+  gap: 8px;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 10px;
+  gap: 6px;
+}
+
+.btn-create {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background: #7b5bf0;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.divider {
+  text-align: center;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.social-login {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-google, .btn-apple {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}

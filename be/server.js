@@ -5,10 +5,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Import route auth
 const authRoutes = require("./routes/auth");
 
-// Dùng route
 app.use("/api/auth", authRoutes);
 
 const PORT = 3001;

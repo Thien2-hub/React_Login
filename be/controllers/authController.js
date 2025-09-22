@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 const db = require("../config/db");
 const crypto = require("crypto");
 
-// Đăng ký
 exports.signup = (req, res) => {
   const { fullname, email, password } = req.body;
   const hash = bcrypt.hashSync(password, 10);
@@ -16,7 +15,6 @@ exports.signup = (req, res) => {
     });
 };
 
-// Đăng nhập
 exports.login = (req, res) => {
   const { email, password } = req.body;
 
@@ -32,7 +30,6 @@ exports.login = (req, res) => {
   });
 };
 
-// Gửi yêu cầu reset password
 exports.resetRequest = (req, res) => {
   const { email } = req.body;
   const token = crypto.randomBytes(20).toString("hex");
@@ -43,12 +40,10 @@ exports.resetRequest = (req, res) => {
     (err, results) => {
       if (err || results.affectedRows === 0) return res.status(400).json({ msg: "Email không tồn tại" });
 
-      // Ở đây bạn có thể dùng nodemailer để gửi email, demo mình chỉ trả về token
       res.json({ msg: "Reset token đã tạo", token });
     });
 };
 
-// Đặt lại mật khẩu
 exports.resetPassword = (req, res) => {
   const { token, newPassword } = req.body;
   const hash = bcrypt.hashSync(newPassword, 10);
@@ -59,6 +54,14 @@ exports.resetPassword = (req, res) => {
       if (err || results.affectedRows === 0) return res.status(400).json({ msg: "Token không hợp lệ hoặc đã hết hạn" });
       res.json({ msg: "Đổi mật khẩu thành công" });
     });
+    
+};
+exports.googleLogin = (req, res) => {
+  return res.json({ message: "Bạn đang login Google (demo)" });
+};
+
+exports.appleLogin = (req, res) => {
+  return res.json({ message: "Bạn đang login Apple (demo)" });
 };
 
 
