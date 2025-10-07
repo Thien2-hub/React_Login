@@ -33,7 +33,7 @@ exports.login = (req, res) => {
 exports.resetRequest = (req, res) => {
   const { email } = req.body;
   const token = crypto.randomBytes(20).toString("hex");
-  const expiry = new Date(Date.now() + 3600000); // 1h
+  const expiry = new Date(Date.now() + 3600000);
 
   db.query("UPDATE users SET resetToken=?, resetTokenExpiry=? WHERE email=?",
     [token, expiry, email],

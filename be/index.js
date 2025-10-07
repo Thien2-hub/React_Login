@@ -5,16 +5,13 @@ const bodyParser = require("body-parser");
 const app = express();
 const PORT = 5000;
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-// API test
 app.get("/", (req, res) => {
   res.send("Backend is running...");
 });
 
-// API login mẫu
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;
 
